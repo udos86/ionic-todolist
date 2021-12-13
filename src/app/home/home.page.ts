@@ -7,6 +7,20 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  title = 'Hi Ionic';
+  todo: string;
+  todos: string[] = [];  
+
   constructor() {}
 
+  addTodo() {
+    if (this.todo.length > 0) {
+      this.todos.push(this.todo);
+      this.todo = '';
+    }
+  }
+
+  removeTodo(index: number) {
+    this.todos.splice(index, 1);
+  }
 }
