@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Todo } from '../todo.model';
+import { TodosService } from '../todos.service';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +11,14 @@ export class HomePage {
 
   title = 'Hi Ionic';
   todo: string;
-  todos: string[] = [];  
+  todos: Todo[] = this.todosService.getTodos();
 
-  constructor() {}
+  constructor(private todosService: TodosService) {}
 
   addTodo() {
     if (this.todo.length > 0) {
-      this.todos.push(this.todo);
+      this.todosService.addTodo({id: `${this.todos.length + 1}`, text: this.todo});
       this.todo = '';
     }
-  }
-
-  removeTodo(index: number) {
-    this.todos.splice(index, 1);
   }
 }

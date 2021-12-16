@@ -13,12 +13,17 @@
     </ion-toolbar>
   </ion-header>
 
-  <input [(ngModel)]="todo">
+  <ion-item>
+    <ion-label>Title</ion-label>
+    <ion-input [(ngModel)]="todo" placeholder="Enter your todo"></ion-input>
+    <ion-button color="primary" (click)="addTodo()">Add</ion-button>
+  </ion-item>
 
-  <button type="button" (click)="addTodo()">Add</button>
-
-  <ul>
-    <li *ngFor="let todo of todos; index as index;" (click)="removeTodo(index)">{{ todo }}</li>
-  </ul>
+  <ion-list>
+    <ion-item *ngFor="let todo of todos; index as index;" 
+    button [routerLink]="['/detail', todo.id]">
+    <ion-label>{{todo.id}} {{ todo.text }}</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
