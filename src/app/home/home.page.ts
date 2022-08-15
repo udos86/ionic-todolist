@@ -10,7 +10,7 @@ import { TodosService } from '../todos.service';
 export class HomePage {
 
   title = 'Hi Ionic';
-  todo: string;
+  todo: string = '';
   todos: Todo[] = this.todosService.getTodos();
 
   constructor(private todosService: TodosService) {}
