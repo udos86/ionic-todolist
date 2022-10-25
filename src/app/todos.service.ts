@@ -6,9 +6,9 @@ import { Todo } from './todo.model';
 })
 export class TodosService {
   private readonly todos: Todo[] = [
-    { id: "1", text: 'Müll rausbringen'},
-    { id: "2", text: 'Geschenke kaufen'},
-    { id: "3", text: 'Urlaub machen'},   
+    { id: '1', text: 'Müll rausbringen'},
+    { id: '2', text: 'Geschenke kaufen'},
+    { id: '3', text: 'Urlaub machen'},   
   ];  
 
   constructor() { }
@@ -17,7 +17,7 @@ export class TodosService {
     return this.todos;
   }
 
-  getTodoById(id: string): Todo | undefined {
+  getTodoById(id: string): Todo | undefined {
     return this.todos.find(todo => todo.id === id);
   }
 

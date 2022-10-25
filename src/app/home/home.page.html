@@ -22,7 +22,7 @@
   <ion-list>
     <ion-item *ngFor="let todo of todos; index as index;" 
     button [routerLink]="['/detail', todo.id]">
-    <ion-label>{{todo.id}} {{ todo.text }}</ion-label>
+    <ion-label>{{ todo.text }}</ion-label>
     </ion-item>
   </ion-list>
 

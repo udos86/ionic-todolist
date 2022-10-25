@@ -16,7 +16,7 @@ export class HomePage {
 
   addTodo(): void {
     if (this.todo.length > 0) {
-      this.todosService.addTodo({id: `${this.todos.length + 1}`, text: this.todo});
+      this.todosService.addTodo({id: crypto.randomUUID(), text: this.todo});
       this.todo = '';
     }
   }
