@@ -9,13 +9,15 @@ import { TodosService } from '../todos.service';
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
-  todo: Todo;
+  todo: Todo | undefined;
 
   constructor(private route: ActivatedRoute, private todosService: TodosService) { }
 
   ngOnInit() {
     const todoId = this.route.snapshot.paramMap.get('id');
-    this.todo = this.todosService.getTodoById(todoId);
+    if (typeof todoId === 'string') {
+      this.todo = this.todosService.getTodoById(todoId);
+    } 
   }
 }
 
