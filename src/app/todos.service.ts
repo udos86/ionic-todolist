@@ -11,8 +11,6 @@ export class TodosService {
     { id: '3', text: 'Urlaub machen'},   
   ];  
 
-  constructor() { }
-
   getTodos(): Todo[] {
     return this.todos;
   }
@@ -21,7 +19,7 @@ export class TodosService {
     return this.todos.find(todo => todo.id === id);
   }
 
-  addTodo(todo: Todo) {
+  addTodo(todo: Todo): void {
     this.todos.push(todo);
   }
 }
