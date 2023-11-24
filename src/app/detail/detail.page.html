@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content>
-  <p *ngIf="todo; else todoNotFound">{{ todo.text }}</p>
-  <ng-template #todoNotFound><p>Todo konnte nicht gefunden werden.</p></ng-template>
+  @if (todo) {
+  <p>{{ todo.text }}</p>
+  } @else {
+  <p>Todo konnte nicht gefunden werden.</p>
+  }
 </ion-content>

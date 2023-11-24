@@ -4,7 +4,9 @@ const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'ionic-todolist',
   webDir: 'www',
-  bundledWebRuntime: false
+  server: {
+    androidScheme: 'https'
+  }
 };
 
 export default config;
